@@ -1,2 +1,6 @@
-<!DOCTYPE RCC>
-<RCC version="1.0"/>
+<RCC>
+    <qresource prefix="/translations"/>
+    <qresource prefix="/">
+        <file>translations/text-previewer_ja_JP.qm</file>
+    </qresource>
+</RCC>
