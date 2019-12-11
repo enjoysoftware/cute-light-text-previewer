@@ -17,15 +17,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    viewer_mainwin.cpp
 
 HEADERS += \
-    mainwindow.h
+    viewer_mainwin.h
 
 FORMS += \
-    mainwindow.ui
+    viewer_mainwin.ui
 
 # Default rules for deployment.
 #qnx: target.path = /tmp/$${TARGET}/bin
 #else: unix:!android: target.path = /opt/$${TARGET}/bin
 #!isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    icons.qrc \
+    translations.qrc
+TRANSLATIONS = \
+    translations/text-previewer_ja_JP.ts

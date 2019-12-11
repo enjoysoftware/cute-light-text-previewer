@@ -2,20 +2,26 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include <QFile>
+#include <QFileInfo>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
+class viewer_mainwin : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    viewer_mainwin(QWidget *parent = nullptr);
+    ~viewer_mainwin();
 
 private:
+    void iconSetup();
+    void actionSetup();
+    void loadFile();
     Ui::MainWindow *ui;
+private slots:
+    void fileOpen();
 };
 #endif // MAINWINDOW_H
