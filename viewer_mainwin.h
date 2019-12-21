@@ -23,5 +23,6 @@ private:
     Ui::MainWindow *ui;
 private slots:
     void fileOpen();
+    void filePrint();
 };
 #endif // MAINWINDOW_H
