@@ -35,3 +35,15 @@ RESOURCES += \
     translations.qrc
 TRANSLATIONS = \
     translations/text-previewer_ja_JP.ts
+LUPDATE = $$[QT_INSTALL_BINS]/lupdate -locations absolute -no-obsolete
+LRELEASE = $$QMAKE_LRELEASE
+isEmpty(LRELEASE):LRELEASE = $$[QT_INSTALL_BINS]/lrelease
+lupdate.commands = cd $$PWD/.. && $$LUPDATE src -ts $$TRANSLATIONS
+QMAKE_EXTRA_TARGETS += lupdate
+updateqm.input = TRANSLATIONS
+updateqm.output = $$OUT_PWD/$$TARGET_DIR/${QMAKE_FILE_BASE}.qm
+isEmpty(vcproj):updateqm.variable_out = PRE_TARGETDEPS
+updateqm.commands = $$LRELEASE ${QMAKE_FILE_IN} -qm ${QMAKE_FILE_OUT}
+updateqm.name = LRELEASE ${QMAKE_FILE_IN}
+updateqm.CONFIG += no_link target_predeps
+QMAKE_EXTRA_COMPILERS += updateqm
