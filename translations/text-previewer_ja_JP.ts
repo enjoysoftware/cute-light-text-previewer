@@ -4,29 +4,32 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../viewer_mainwin.ui" line="14"/>
         <source>Cute Light Text Previewer</source>
-        <translation type="unfinished"></translation>
+        <translation>キュートライトテキストプレビューア</translation>
     </message>
     <message>
-        <location filename="../viewer_mainwin.ui" line="40"/>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>ツールバー</translation>
     </message>
     <message>
-        <location filename="../viewer_mainwin.ui" line="55"/>
         <source>&amp;Open</source>
         <translation>開く(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../viewer_mainwin.ui" line="58"/>
         <source>Open</source>
         <translation>開く</translation>
     </message>
     <message>
-        <location filename="../viewer_mainwin.ui" line="61"/>
         <source>O</source>
         <translation>O</translation>
+    </message>
+    <message>
+        <source>&amp;Print</source>
+        <translation>印刷(&amp;P)</translation>
+    </message>
+    <message>
+        <source>P</source>
+        <translation>P</translation>
     </message>
 </context>
 </TS>
