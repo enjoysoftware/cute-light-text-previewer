@@ -13,6 +13,7 @@ viewer_mainwin::viewer_mainwin(QWidget *parent)
     ui->setupUi(this);
     actionSetup();
     iconSetup();
+    ui->actionAbout->setText(tr("About %1").arg(APP_NAME));
 }
 
 viewer_mainwin::~viewer_mainwin()
