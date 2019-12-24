@@ -47,5 +47,16 @@ p, li { white-space: pre-wrap; }
         <source>P</source>
         <translation>P</translation>
     </message>
+    <message>
+        <source>About</source>
+        <translation>概要</translation>
+    </message>
+</context>
+<context>
+    <name>viewer_mainwin</name>
+    <message>
+        <source>About %1</source>
+        <translation>%1 について</translation>
+    </message>
 </context>
 </TS>
