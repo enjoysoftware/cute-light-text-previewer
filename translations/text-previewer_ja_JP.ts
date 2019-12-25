@@ -53,10 +53,48 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>QObject</name>
+    <message>
+        <source>Cute Light Text Previewer</source>
+        <translation>キュートライトテキストプレビューア</translation>
+    </message>
+</context>
+<context>
     <name>viewer_mainwin</name>
     <message>
         <source>About %1</source>
-        <translation>%1 について</translation>
+        <translation type="vanished">%1 について</translation>
+    </message>
+    <message>
+        <source>&amp;About %1</source>
+        <translation>%1について(&amp;A)</translation>
+    </message>
+    <message>
+        <source>Open file</source>
+        <translation>ファイルを開く</translation>
+    </message>
+    <message>
+        <source>Text files(*.txt);;HTML document(*.html *.htm);;All files(*.*)</source>
+        <translation>テキストファイル(*.txt);;HTMLドキュメント(*.html *htm);;すべてのファイル(*.*)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Can&apos;t open %1:
+%2</source>
+        <translation>ファイル %1を開けません:
+%2</translation>
+    </message>
+    <message>
+        <source>Error:
+%1</source>
+        <translation>エラー: %1</translation>
+    </message>
+    <message>
+        <source>Opened &quot;%1&quot; :%2 lines</source>
+        <translation>「%1」を開きました：%2行</translation>
     </message>
 </context>
 </TS>
