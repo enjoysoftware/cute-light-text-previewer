@@ -6,6 +6,7 @@
 #include <QMessageBox>
 #define ICON_OPEN QIcon::fromTheme("document-open")
 #define ICON_PRINT QIcon::fromTheme("document-print")
+QString const extern APP_NAME;
 viewer_mainwin::viewer_mainwin(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)

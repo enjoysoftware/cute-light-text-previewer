@@ -3,6 +3,7 @@
 #include <QApplication>
 #include <QTranslator>
 #include <QLibraryInfo>
+QString const extern APP_NAME=QObject::tr("Cute Light Text Previewer");
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

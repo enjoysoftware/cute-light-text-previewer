@@ -4,7 +4,6 @@
 #include <QMainWindow>
 #include <QFile>
 #include <QFileInfo>
-#define APP_NAME QString(tr("Cute Light Text Previewer"))
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
