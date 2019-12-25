@@ -64,6 +64,6 @@ QString viewer_mainwin::loadFile(QString filename){
         lines++;
         line +=in.readLine()+"\n";
     }
-    ui->statusbar->showMessage(tr("%1 :%2 lines").arg(filename,QString::number(lines)));
+    ui->statusbar->showMessage(tr("Opened \"%1\" :%2 lines").arg(filename,QString::number(lines)));
     return line;
 }
