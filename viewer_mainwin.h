@@ -19,7 +19,7 @@ public:
 private:
     void iconSetup();
     void actionSetup();
-    void loadFile();
+    QString loadFile(QString);
     Ui::MainWindow *ui;
 private slots:
     void fileOpen();

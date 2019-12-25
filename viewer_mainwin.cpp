@@ -1,7 +1,9 @@
 #include "viewer_mainwin.h"
 #include "ui_viewer_mainwin.h"
 #include <QIcon>
+#include <QFileDialog>
 #include <QDebug>
+#include <QDir>
 #include <QTextStream>
 #include <QMessageBox>
 #define ICON_OPEN QIcon::fromTheme("document-open")
@@ -14,7 +16,8 @@ viewer_mainwin::viewer_mainwin(QWidget *parent)
     ui->setupUi(this);
     actionSetup();
     iconSetup();
-    ui->actionAbout->setText(tr("About %1").arg(APP_NAME));
+    QDir::setCurrent(QDir::homePath());
+    ui->actionAbout->setText(tr("&About %1").arg(APP_NAME));
 }
 
 viewer_mainwin::~viewer_mainwin()
@@ -34,7 +37,33 @@ void viewer_mainwin::iconSetup(){
     qDebug() << "Done";
 }
 void viewer_mainwin::fileOpen(){
-
+    QFileDialog filed;
+    QString name=filed.getOpenFileName(this,tr("Open file"),QDir::currentPath(),tr("Text files(*.txt);;HTML document(*.html *.htm);;All files(*.*)"));
+    if (name.isEmpty()){
+        return;
+    }
+    QString content=loadFile(name);
+    ui->textEdit->setText(content);
+    QFileInfo forpath(name);
+    QDir::setCurrent(forpath.absolutePath());
 }
 void viewer_mainwin::filePrint(){
+}
+QString viewer_mainwin::loadFile(QString filename){
+    QFile qfilename(filename);
+    if (!qfilename.open(QIODevice::ReadOnly)) {
+        QString errMsg = qfilename.errorString();
+        QMessageBox::critical(this,tr("Error"),tr("Can't open %1:\n%2").arg(qfilename.fileName(),errMsg));
+        return tr("Error:\n%1").arg(errMsg);
+    }
+    QTextStream in(&qfilename);
+    QString line;
+    int lines;
+    lines=0;
+    while (!in.atEnd()){
+        lines++;
+        line +=in.readLine()+"\n";
+    }
+    ui->statusbar->showMessage(tr("%1 :%2 lines").arg(filename,QString::number(lines)));
+    return line;
 }
