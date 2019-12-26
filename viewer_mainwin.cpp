@@ -8,6 +8,7 @@
 #include <QMessageBox>
 #define ICON_OPEN QIcon::fromTheme("document-open")
 #define ICON_PRINT QIcon::fromTheme("document-print")
+#define ICON_EXIT QIcon::fromTheme("application-exit")
 QString const extern APP_NAME;
 viewer_mainwin::viewer_mainwin(QWidget *parent)
     : QMainWindow(parent)
@@ -28,12 +29,16 @@ void viewer_mainwin::actionSetup(){
     qDebug() << "Connecting actions...";
     connect(ui->actionOpen_O,SIGNAL(triggered()),this,SLOT(fileOpen()));
     connect(ui->action_Print,SIGNAL(triggered()),this,SLOT(filePrint()));
+    connect(ui->actionAbout,SIGNAL(triggered()),this,SLOT(showabout()));
+    connect(ui->actionExit,SIGNAL(triggered()),this,SLOT(close()));
     qDebug() << "Done";
+    about_=new AboutDialog();
 }
 void viewer_mainwin::iconSetup(){
     qDebug() << "Setting up icons";
     ui->actionOpen_O->setIcon(ICON_OPEN);
     ui->action_Print->setIcon(ICON_PRINT);
+    ui->actionExit->setIcon(ICON_EXIT);
     qDebug() << "Done";
 }
 void viewer_mainwin::fileOpen(){
@@ -66,4 +71,7 @@ QString viewer_mainwin::loadFile(QString filename){
     }
     ui->statusbar->showMessage(tr("Opened \"%1\" :%2 lines").arg(filename,QString::number(lines)));
     return line;
+}
+void viewer_mainwin::showabout(){
+    about_->show();
 }

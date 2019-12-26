@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QFile>
 #include <QFileInfo>
+#include "aboutdialog.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -21,8 +22,11 @@ private:
     void actionSetup();
     QString loadFile(QString);
     Ui::MainWindow *ui;
+    AboutDialog *about_;
+
 private slots:
     void fileOpen();
     void filePrint();
+    void showabout();
 };
 #endif // MAINWINDOW_H
