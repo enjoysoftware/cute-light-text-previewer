@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     translator.load("text-previewer_" + QLocale::system().name(), ":/translations");
     a.installTranslator(&translator);
     a.installTranslator(&qtTranslator);
-    QFile stylefile("QDarkStyleSheet/qdarkstyle/style.qss");
+    QFile stylefile(":/QDarkStyleSheet/qdarkstyle/style.qss");
     if (!stylefile.exists())
     {
     printf("Unable to set stylesheet, file not found\n");

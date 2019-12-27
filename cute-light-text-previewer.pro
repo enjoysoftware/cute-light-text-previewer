@@ -35,6 +35,7 @@ FORMS += \
 
 RESOURCES += \
     icons.qrc \
+    theme.qrc \
     translations.qrc
 TRANSLATIONS = \
     translations/text-previewer_ja_JP.ts
