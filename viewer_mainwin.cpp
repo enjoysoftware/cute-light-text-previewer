@@ -26,20 +26,20 @@ viewer_mainwin::~viewer_mainwin()
     delete ui;
 }
 void viewer_mainwin::actionSetup(){
-    qDebug() << "Connecting actions...";
+    qDebug() << tr("Connecting actions...");
     connect(ui->actionOpen_O,SIGNAL(triggered()),this,SLOT(fileOpen()));
     connect(ui->action_Print,SIGNAL(triggered()),this,SLOT(filePrint()));
     connect(ui->actionAbout,SIGNAL(triggered()),this,SLOT(showabout()));
     connect(ui->actionExit,SIGNAL(triggered()),this,SLOT(close()));
-    qDebug() << "Done";
+    qDebug() << tr("Done");
     about_=new AboutDialog();
 }
 void viewer_mainwin::iconSetup(){
-    qDebug() << "Setting up icons";
+    qDebug() << tr("Setting up icons");
     ui->actionOpen_O->setIcon(ICON_OPEN);
     ui->action_Print->setIcon(ICON_PRINT);
     ui->actionExit->setIcon(ICON_EXIT);
-    qDebug() << "Done";
+    qDebug() << tr("Done");
 }
 void viewer_mainwin::fileOpen(){
     QFileDialog filed;
