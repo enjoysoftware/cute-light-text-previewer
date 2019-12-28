@@ -223,5 +223,17 @@ p, li { white-space: pre-wrap; }
         <source>Opened &quot;%1&quot; :%2 lines</source>
         <translation>「%1」を開きました：%2行</translation>
     </message>
+    <message>
+        <source>Connecting actions...</source>
+        <translation>アクションを接続...</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>完了</translation>
+    </message>
+    <message>
+        <source>Setting up icons</source>
+        <translation>アイコンを設定</translation>
+    </message>
 </context>
 </TS>
