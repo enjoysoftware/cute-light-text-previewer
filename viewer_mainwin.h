@@ -22,10 +22,12 @@ private:
     void actionSetup();
     Ui::MainWindow *ui;
     AboutDialog *about_;
-
+    bool is_empty;
+    bool is_opened;
 private slots:
     void fileOpen();
     void filePrint();
     void showabout();
+    void setEmptyStatus();
 };
 #endif // MAINWINDOW_H
