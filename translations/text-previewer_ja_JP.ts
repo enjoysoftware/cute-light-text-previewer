@@ -202,7 +202,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Text files(*.txt);;HTML document(*.html *.htm);;All files(*.*)</source>
-        <translation>テキストファイル(*.txt);;HTMLドキュメント(*.html *htm);;すべてのファイル(*.*)</translation>
+        <translation type="vanished">テキストファイル(*.txt);;HTMLドキュメント(*.html *htm);;すべてのファイル(*.*)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -234,6 +234,24 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Setting up icons</source>
         <translation>アイコンを設定</translation>
+    </message>
+    <message>
+        <source>Text files(*.txt);;HTML document(*.html *.htm);;All files(*.* *)</source>
+        <translation>テキストファイル(*.txt);;HTMLドキュメント(*.html *.htm);;すべてのファイル(*.* *)</translation>
+    </message>
+    <message>
+        <source>Question</source>
+        <translation>質問</translation>
+    </message>
+    <message>
+        <source>This file is empty.
+Do you want to continue?</source>
+        <translation>このファイルは空です。
+続けてもよろしいですか？</translation>
+    </message>
+    <message>
+        <source>Empty in textEdit</source>
+        <translation>textEditの中は空です</translation>
     </message>
 </context>
 </TS>
