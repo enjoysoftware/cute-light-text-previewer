@@ -43,7 +43,9 @@ void viewer_mainwin::iconSetup(){
 }
 void viewer_mainwin::fileOpen(){
     QFileDialog filed;
-    QString name=filed.getOpenFileName(this,tr("Open file"),QDir::currentPath(),tr("Text files(*.txt);;HTML document(*.html *.htm);;All files(*.*)"));
+    QString name=filed.getOpenFileName(this,tr("Open file"),QDir::currentPath(),tr("Text files(*.txt);;"
+                                                                                   "HTML document(*.html *.htm);;"
+                                                                                   "All files(*.* *)"));
     if (name.isEmpty()){
         return;
     }
