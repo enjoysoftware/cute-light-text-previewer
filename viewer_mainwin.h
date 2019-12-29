@@ -16,11 +16,10 @@ class viewer_mainwin : public QMainWindow
 public:
     viewer_mainwin(QWidget *parent = nullptr);
     ~viewer_mainwin();
-
+    QString loadFile(QString);
 private:
     void iconSetup();
     void actionSetup();
-    QString loadFile(QString);
     Ui::MainWindow *ui;
     AboutDialog *about_;
 
