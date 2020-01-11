@@ -36,6 +36,7 @@ void viewer_mainwin::actionSetup(){
     connect(ui->actionExit,SIGNAL(triggered()),this,SLOT(close()));
     connect(ui->textEdit,SIGNAL(textChanged()),this,SLOT(setEmptyStatus()));
     qDebug() << tr("Done");
+    this->setContextMenuPolicy(Qt::NoContextMenu);
     about_=new AboutDialog();
     ui->action_Print->setEnabled(is_opened);
 }
