@@ -7,9 +7,7 @@
 #include <QTextStream>
 #include <QPrintDialog>
 #include <QMessageBox>
-#define ICON_OPEN QIcon::fromTheme("document-open")
-#define ICON_PRINT QIcon::fromTheme("document-print")
-#define ICON_EXIT QIcon::fromTheme("application-exit")
+#include "defines.h"
 QString const extern APP_NAME;
 viewer_mainwin::viewer_mainwin(QWidget *parent)
     : QMainWindow(parent)

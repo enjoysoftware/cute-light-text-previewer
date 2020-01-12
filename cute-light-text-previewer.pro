@@ -22,6 +22,7 @@ SOURCES += \
 
 HEADERS += \
     aboutdialog.h \
+    defines.h \
     viewer_mainwin.h
 
 FORMS += \
