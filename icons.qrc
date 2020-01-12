@@ -138,5 +138,6 @@
         <file>icons/ContrastHigh/zoom-in.png</file>
         <file>icons/ContrastHigh/zoom-original.png</file>
         <file>icons/ContrastHigh/zoom-out.png</file>
+        <file>icons/Orig/translate.png</file>
     </qresource>
 </RCC>
