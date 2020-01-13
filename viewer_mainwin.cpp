@@ -97,7 +97,12 @@ void viewer_mainwin::setEmptyStatus(){
     if (is_opened){
     if(ui->textEdit->toPlainText() == ""){
         is_empty = true;
-        qDebug() << tr("Empty in textEdit");
+        qDebug() << "Changed status:textEdit is empty";
+    }else{
+        is_empty  = false;
+        qDebug() << "textEdit is not empty";
     }
+    }
+}
     }
 }
