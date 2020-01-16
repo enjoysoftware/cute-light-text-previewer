@@ -27,23 +27,24 @@ viewer_mainwin::~viewer_mainwin()
     delete ui;
 }
 void viewer_mainwin::actionSetup(){
-    qDebug() << tr("Connecting actions...");
+    qDebug() << "MSG:" << tr("Connecting actions...");
     connect(ui->actionOpen_O,SIGNAL(triggered()),this,SLOT(fileOpen()));
     connect(ui->action_Print,SIGNAL(triggered()),this,SLOT(filePrint()));
     connect(ui->actionAbout,SIGNAL(triggered()),this,SLOT(showabout()));
     connect(ui->actionExit,SIGNAL(triggered()),this,SLOT(close()));
     connect(ui->textEdit,SIGNAL(textChanged()),this,SLOT(setEmptyStatus()));
-    qDebug() << tr("Done");
+    qDebug() << "MSG:" << tr("Done");
     this->setContextMenuPolicy(Qt::NoContextMenu);
     about_=new AboutDialog();
     ui->action_Print->setEnabled(is_opened);
 }
 void viewer_mainwin::iconSetup(){
-    qDebug() << tr("Setting up icons");
+    qDebug() << "MSG:" << tr("Setting up icons");
     ui->actionOpen_O->setIcon(ICON_OPEN);
     ui->action_Print->setIcon(ICON_PRINT);
     ui->actionExit->setIcon(ICON_EXIT);
-    qDebug() << tr("Done");
+    ui->action_Translate->setIcon(ICON_TRANSLATE);
+    qDebug() << "MSG:" << tr("Done");
 }
 void viewer_mainwin::fileOpen(){
     QFileDialog filed;
