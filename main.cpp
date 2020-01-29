@@ -6,7 +6,7 @@
 #include <QTextStream>
 #include <QDebug>
 QString const extern APP_NAME=QObject::tr("Cute Light Text Previewer");
-QString const extern VERSION="0.1";
+QString const extern VERSION="1.0";
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
