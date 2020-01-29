@@ -66,8 +66,10 @@ void viewer_mainwin::filePrint(){
             return;
         }
     }
+    qDebug() << "Execute the print dialog.";
     int res=pdlg.exec();
     if(res == QPrintDialog::Accepted){
+        qDebug() << "Accepted.Sent a job.";
         ui->textEdit->print((QPagedPaintDevice*)pdlg.printer());
 }
 }
