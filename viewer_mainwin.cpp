@@ -14,10 +14,10 @@ viewer_mainwin::viewer_mainwin(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    actionSetup();
-    iconSetup();
     is_opened = false;
     is_empty = false;
+    actionSetup();
+    iconSetup();
     QDir::setCurrent(QDir::homePath());
     ui->actionAbout->setText(tr("&About %1").arg(APP_NAME));
 }
