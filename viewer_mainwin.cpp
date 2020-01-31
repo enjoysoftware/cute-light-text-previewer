@@ -107,5 +107,3 @@ void viewer_mainwin::setEmptyStatus(){
     }
     }
 }
-    }
-}
