@@ -30,6 +30,7 @@ void viewer_mainwin::actionSetup(){
     qDebug() << "MSG:" << tr("Connecting actions...");
     connect(ui->actionOpen_O,SIGNAL(triggered()),this,SLOT(fileOpen()));
     connect(ui->action_Print,SIGNAL(triggered()),this,SLOT(filePrint()));
+    connect(ui->action_Translate,SIGNAL(triggered()),this,SLOT(trDlgOpen()));
     connect(ui->actionAbout,SIGNAL(triggered()),this,SLOT(showabout()));
     connect(ui->actionExit,SIGNAL(triggered()),this,SLOT(close()));
     connect(ui->textEdit,SIGNAL(textChanged()),this,SLOT(setEmptyStatus()));
@@ -107,5 +108,8 @@ void viewer_mainwin::setEmptyStatus(){
     }
     }
 }
+void viewer_mainwin::trDlgOpen(){
+    if(g.exec() == QDialog::Rejected){
+        qWarning() << "Dialog closed unexpectedly: Rejected.";
     }
 }
