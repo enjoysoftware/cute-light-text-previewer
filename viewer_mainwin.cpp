@@ -12,6 +12,7 @@ QString const extern APP_NAME;
 viewer_mainwin::viewer_mainwin(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+    , trdlg(new GTranslateDialog)
 {
     ui->setupUi(this);
     is_opened = false;
@@ -24,6 +25,7 @@ viewer_mainwin::viewer_mainwin(QWidget *parent)
 
 viewer_mainwin::~viewer_mainwin()
 {
+    delete trdlg;
     delete ui;
 }
 void viewer_mainwin::actionSetup(){
@@ -109,7 +111,7 @@ void viewer_mainwin::setEmptyStatus(){
     }
 }
 void viewer_mainwin::trDlgOpen(){
-    if(g.exec() == QDialog::Rejected){
+    if(trdlg->exec() == QDialog::Rejected){
         qWarning() << "Dialog closed unexpectedly: Rejected.";
     }
 }

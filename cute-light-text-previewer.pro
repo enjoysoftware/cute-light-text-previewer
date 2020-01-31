@@ -1,4 +1,4 @@
-QT       += core gui printsupport
+QT       += core gui printsupport network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,12 +17,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     aboutdialog.cpp \
+    gtranslatedialog.cpp \
+    gtranslator.cpp \
     main.cpp \
     viewer_mainwin.cpp
 
 HEADERS += \
     aboutdialog.h \
     defines.h \
+    gtranslatedialog.h \
+    gtranslator.h \
     viewer_mainwin.h
 
 FORMS += \
