@@ -14,10 +14,8 @@ class GTranslateDialog : public QDialog
 public:
     explicit GTranslateDialog(QWidget *parent = nullptr);
     ~GTranslateDialog();
-    QString targetLang;
-    QString sourceLang;
-    QString text;
 private:
+    QString text;
     Ui::GTranslateDialog *ui;
     QString language;
 };
