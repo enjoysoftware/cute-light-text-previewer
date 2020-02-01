@@ -31,6 +31,7 @@ HEADERS += \
 
 FORMS += \
     aboutdialog.ui \
+    gtranslatedialog.ui \
     viewer_mainwin.ui
 
 # Default rules for deployment.
