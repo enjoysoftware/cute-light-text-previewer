@@ -1,6 +1,7 @@
 #include "gtranslatedialog.h"
 #include "ui_gtranslatedialog.h"
 #include "gtranslator.h"
+#include "ui_viewer_mainwin.h"
 #include <QLocale>
 #include <QDebug>
 #include <QMessageBox>
@@ -19,7 +20,7 @@ GTranslateDialog::GTranslateDialog(QWidget *parent) :
         language=locale;
     }
     ui->targetLangBox->setText(language);
-    GTranslator tra(language,"en","Value arrays — A container structure to maintain an array of generic values",this);
+    GTranslator tra(language,"en","Please type here",this);
     ui->translatedText->setText(tra.translate());
     qDebug() << "Language :" << language;
 }
