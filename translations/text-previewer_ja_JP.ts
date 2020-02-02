@@ -89,6 +89,41 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GTranslateDialog</name>
+    <message>
+        <source>Translate...</source>
+        <translation>翻訳...</translation>
+    </message>
+    <message>
+        <source>Target Language:</source>
+        <translation>ターゲットの言語：</translation>
+    </message>
+    <message>
+        <source>Target locale</source>
+        <translation>ターゲットロケール</translation>
+    </message>
+    <message>
+        <source>Translate</source>
+        <translation>翻訳</translation>
+    </message>
+    <message>
+        <source>Please type here</source>
+        <translation>ここに入力してください</translation>
+    </message>
+    <message>
+        <source>Source Language:</source>
+        <translation>ソース言語：</translation>
+    </message>
+    <message>
+        <source>&amp;Translate</source>
+        <translation>翻訳(&amp;T)</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;After entering the source and target languages (for example, en, ja, ko,etc.),&lt;/p&gt;&lt;p&gt;click the &apos;Translate&apos; button.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ターゲット言語とターゲット言語を入力した後(例えば en, ja, ko,etc.)、&lt;/p&gt;&lt;p&gt;”翻訳”ボタンをクリックしてください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <source>Cute Light Text Previewer</source>
@@ -178,12 +213,41 @@ p, li { white-space: pre-wrap; }
         <source>Ctrl+E</source>
         <translation>Ctrl+E</translation>
     </message>
+    <message>
+        <source>&amp;Translate</source>
+        <translation>翻訳(&amp;T)</translation>
+    </message>
+    <message>
+        <source>Translate</source>
+        <translation>翻訳</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Cute Light Text Previewer</source>
         <translation>キュートライトテキストプレビューア</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Error: %1 
+Detail:%2</source>
+        <translation>エラー: %1 詳細: %2</translation>
+    </message>
+    <message>
+        <source>Error: %1</source>
+        <translation>エラー: %1</translation>
+    </message>
+    <message>
+        <source>{&quot;code&quot;: 1000 ,&quot;text&quot;: &quot;%1&quot;}</source>
+        <translation>{&quot;code&quot;: 1000 ,&quot;text&quot;: &quot;%1&quot;}</translation>
+    </message>
+    <message>
+        <source>{&quot;code&quot;: 900 ,&quot;text&quot;: &quot;What should have been redirected is not redirected. Check that the language specification is correct.&quot;}</source>
+        <translation>{&quot;code&quot;: 900 ,&quot;text&quot;: &quot;リダイレクトされるべきところがリダイレクトされていません。言語指定が正しいか確認してください。&quot;}</translation>
     </message>
 </context>
 <context>
@@ -251,7 +315,7 @@ Do you want to continue?</source>
     </message>
     <message>
         <source>Empty in textEdit</source>
-        <translation>textEditの中は空です</translation>
+        <translation type="vanished">textEditの中は空です</translation>
     </message>
 </context>
 </TS>
