@@ -112,7 +112,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Source Language:</source>
-        <translation>ソース言語：</translation>
+        <translation>もとの言語：</translation>
     </message>
     <message>
         <source>&amp;Translate</source>
@@ -120,7 +120,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;After entering the source and target languages (for example, en, ja, ko,etc.),&lt;/p&gt;&lt;p&gt;click the &apos;Translate&apos; button.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ターゲット言語とターゲット言語を入力した後(例えば en, ja, ko,etc.)、&lt;/p&gt;&lt;p&gt;”翻訳”ボタンをクリックしてください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;もとの言語とターゲットの言語を入力した後(例えば en, ja, ko,など)、&lt;/p&gt;&lt;p&gt;”翻訳”ボタンをクリックしてください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
