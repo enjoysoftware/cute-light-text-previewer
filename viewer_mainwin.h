@@ -30,7 +30,7 @@ private slots:
     void fileOpen();
     void filePrint();
     void showabout();
-    void setEmptyStatus();
+    void setData();
     void trDlgOpen();
 };
 #endif // MAINWINDOW_H

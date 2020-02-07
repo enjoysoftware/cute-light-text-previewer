@@ -35,7 +35,7 @@ void viewer_mainwin::actionSetup(){
     connect(ui->action_Translate,SIGNAL(triggered()),this,SLOT(trDlgOpen()));
     connect(ui->actionAbout,SIGNAL(triggered()),this,SLOT(showabout()));
     connect(ui->actionExit,SIGNAL(triggered()),this,SLOT(close()));
-    connect(ui->textEdit,SIGNAL(textChanged()),this,SLOT(setEmptyStatus()));
+    connect(ui->textEdit,SIGNAL(textChanged()),this,SLOT(setData()));
     qDebug() << "MSG:" << tr("Done");
     this->setContextMenuPolicy(Qt::NoContextMenu);
     about_=new AboutDialog();
@@ -98,7 +98,8 @@ QString viewer_mainwin::loadFile(QString filename){
 void viewer_mainwin::showabout(){
     about_->show();
 }
-void viewer_mainwin::setEmptyStatus(){
+void viewer_mainwin::setData(){
+    trdlg->setText(ui->textEdit->toPlainText());
     ui->action_Print->setEnabled(is_opened);
     if (is_opened){
     if(ui->textEdit->toPlainText() == ""){
