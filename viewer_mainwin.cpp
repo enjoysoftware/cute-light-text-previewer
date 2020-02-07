@@ -58,7 +58,7 @@ void viewer_mainwin::fileOpen(){
         return;
     }
     QString content=loadFile(name);
-    ui->textEdit->setText(content);
+    ui->textEdit->setPlainText(content);
     QFileInfo forpath(name);
     QDir::setCurrent(forpath.absolutePath());
 }
