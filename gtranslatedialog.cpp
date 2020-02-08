@@ -29,6 +29,9 @@ GTranslateDialog::~GTranslateDialog()
 {
     delete ui;
 }
+void GTranslateDialog::setText(QString tmptext){
+    text = tmptext; return;
+}
 void GTranslateDialog::showEvent(QShowEvent *){
     ui->translatedText->setText(text);
 }
