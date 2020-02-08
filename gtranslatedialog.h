@@ -2,7 +2,7 @@
 #define GTRANSLATEDIALOG_H
 
 #include <QDialog>
-
+#include <QShowEvent>
 namespace Ui {
 class GTranslateDialog;
 }
@@ -18,6 +18,8 @@ private:
     QString text;
     Ui::GTranslateDialog *ui;
     QString language;
+protected:
+    virtual void showEvent(QShowEvent *);
 };
 
 #endif // GTRANSLATEDIALOG_H

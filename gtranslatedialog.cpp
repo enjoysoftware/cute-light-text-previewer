@@ -29,3 +29,6 @@ GTranslateDialog::~GTranslateDialog()
 {
     delete ui;
 }
+void GTranslateDialog::showEvent(QShowEvent *){
+    ui->translatedText->setText(text);
+}
