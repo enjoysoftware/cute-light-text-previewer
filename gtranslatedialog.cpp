@@ -20,9 +20,9 @@ GTranslateDialog::GTranslateDialog(QWidget *parent) :
         language=locale;
     }
     ui->targetLangBox->setText(language);
-    GTranslator tra(language,"en","Please type here",this);
-    ui->translatedText->setText(tra.translate());
-    qDebug() << "Language :" << language;
+//    GTranslator tra(language,"en","Please type here",this);
+//    ui->translatedText->setText(tra.translate());
+//    qDebug() << "Language :" << language;
 }
 
 GTranslateDialog::~GTranslateDialog()
