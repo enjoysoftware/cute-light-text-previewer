@@ -111,5 +111,24 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>translateButton</sender>
+   <signal>clicked()</signal>
+   <receiver>GTranslateDialog</receiver>
+   <slot>startTranslate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>525</x>
+     <y>109</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>546</x>
+     <y>26</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
+ <slots>
+  <slot>startTranslate()</slot>
+ </slots>
 </ui>

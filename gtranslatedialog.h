@@ -21,6 +21,7 @@ private:
     QString language;
 private slots:
     void boxCheck();
+    void startTranslate();
 protected:
     virtual void showEvent(QShowEvent *);
 };

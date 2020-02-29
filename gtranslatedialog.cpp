@@ -44,4 +44,8 @@ void GTranslateDialog::boxCheck(){
     }else{
         ui->translateButton->setEnabled(false);
     }
-    }
+}
+void GTranslateDialog::startTranslate(){
+    GTranslator translator(ui->targetLangBox->text(),ui->sourceLangBox->text(),text,this);
+    ui->translatedText->setText(translator.translate());
+}
