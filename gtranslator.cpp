@@ -29,7 +29,7 @@ QString GTranslator::translate(){
     QString text= jsonObj["text"].toString();
     qDebug() << "Code:" << code << "Text:" << text;
     if(code !=200 && code != 1000){
-        QMessageBox::warning(parentDialog,QObject::tr("Error"),QObject::tr("Error: %1 \nDetail:%2").arg(code).arg(text));
+        QMessageBox::warning(parentDialog,QObject::tr("Error"),QObject::tr("Error: Detail:%2").arg(text));
         return QObject::tr("Error: %1").arg(text);
     }else if(code == 1000){
         return QObject::tr("Error: %1").arg(text);
