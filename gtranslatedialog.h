@@ -19,6 +19,8 @@ private:
     QString text;
     Ui::GTranslateDialog *ui;
     QString language;
+private slots:
+    void boxCheck();
 protected:
     virtual void showEvent(QShowEvent *);
 };

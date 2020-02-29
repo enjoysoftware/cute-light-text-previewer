@@ -10,6 +10,9 @@ GTranslateDialog::GTranslateDialog(QWidget *parent) :
     ui(new Ui::GTranslateDialog)
 {
     ui->setupUi(this);
+    ui->translateButton->setEnabled(false);
+    connect(ui->targetLangBox,SIGNAL(textChanged(const QString&)),this,SLOT(boxCheck()));
+    connect(ui->sourceLangBox,SIGNAL(textChanged(const QString &)),this,SLOT(boxCheck()));
     QString locale=QLocale::system().name();
     qDebug() << "Guess language...";
     if(locale.length() >= 2){
@@ -35,3 +38,10 @@ void GTranslateDialog::setText(QString tmptext){
 void GTranslateDialog::showEvent(QShowEvent *){
     ui->translatedText->setText(text);
 }
+void GTranslateDialog::boxCheck(){
+    if(ui->sourceLangBox->text() != "" && ui->targetLangBox->text() != ""){
+        ui->translateButton->setEnabled(true);
+    }else{
+        ui->translateButton->setEnabled(false);
+    }
+    }
