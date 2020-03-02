@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
     a.installTranslator(&translator);
     a.installTranslator(&qtTranslator);
     viewer_mainwin w;
+#ifdef WITH_DARKSTYLE
     QFile stylefile(":/QDarkStyleSheet/qdarkstyle/style.qss");
     if (!stylefile.exists())
     {
@@ -31,6 +32,7 @@ else
         qDebug() << w.tr("Unable to set stylesheet:\n%1").arg(stylefile.errorString());
     }
 }
+#endif
     w.show();
     return a.exec();
 }
