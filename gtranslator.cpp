@@ -4,11 +4,12 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QEventLoop>
+#include <QUrlQuery>
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
 #include <QNetworkReply>
 #include <QMessageBox>
-#define REQUEST_URL "https://script.google.com/macros/s/AKfycbzjy4EguclwvcRAhCACuTcyPzEK5BFIQUR7UeoX31TOE7DRYZs/exec?target=%1&source=%2&text=%3"
+#define REQUEST_URL "https://script.google.com/macros/s/AKfycbwq9ro5yWQdKXW4_QD0MCiw7WLuXiovK3V9aRmW/exec" //?target=%1&source=%2&text=%3"
 GTranslator::GTranslator(QString targetLang_, QString sourceLang_, QString text_,QWidget *parent) :  targetLang(targetLang_),
     sourceLang(sourceLang_),text(text_),parentDialog(parent)
 {
@@ -38,18 +39,21 @@ QString GTranslator::translate(){
 }
 QString GTranslator::getData(){
         QNetworkRequest request;
-        QUrl httpurl=QUrl(QString(REQUEST_URL).arg(targetLang,sourceLang,text));
+        QUrl httpurl=QUrl(REQUEST_URL);
         request.setUrl(httpurl);
+        request.setHeader(QNetworkRequest::ContentTypeHeader,"application/x-www-form-urlencoded");
         qDebug() << httpurl;
+        QUrlQuery postData;
+        postData.addQueryItem("text", text);
+        postData.addQueryItem("source", sourceLang);
+        postData.addQueryItem("target", targetLang);
         QNetworkAccessManager accsMgr;
-        accsMgr.setNetworkAccessible( QNetworkAccessManager::Accessible );
-        QNetworkReply *reply = accsMgr.get(request);
+ accsMgr.setNetworkAccessible( QNetworkAccessManager::Accessible );
+        QNetworkReply *reply = accsMgr.post(request,postData.toString(QUrl::FullyEncoded).toUtf8());
         QEventLoop waitLoop;
         QObject::connect( reply, SIGNAL(finished()), &waitLoop, SLOT(quit()));
         waitLoop.exec();
         QObject::disconnect( reply, SIGNAL(finished()), &waitLoop, SLOT(quit()));
-//        今後ここはwhileループにする予定
-//        getStatusCode(reply,&waitLoop);
         if( reply->error() != QNetworkReply::NoError ){
             qCritical() << "Error: " << reply->errorString();
             QMessageBox::warning(parentDialog,QObject::tr("Error"),reply->errorString());
@@ -61,9 +65,9 @@ QString GTranslator::getData(){
                 case 302:
                 case 307:
                 //Redirect
-//                    qDebug() << "Redirected: " << reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
+                    //qDebug() << "Redirected: " << reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
                     request.setUrl(reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl());
-                    reply = accsMgr.get(request);
+                    reply = accsMgr.get(request);//,postData.toString(QUrl::FullyEncoded).toUtf8());
                     QObject::connect( reply, SIGNAL(finished()), &waitLoop, SLOT(quit()) );
                     waitLoop.exec();
                     QObject::disconnect( reply, SIGNAL(finished()), &waitLoop, SLOT(quit()));
