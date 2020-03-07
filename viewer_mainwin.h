@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QDragEnterEvent>
+#include <QDropEvent>
 #include <QFile>
 #include <QFileInfo>
 #include "aboutdialog.h"
@@ -21,13 +23,15 @@ public:
 private:
     void iconSetup();
     void actionSetup();
+    void dragEnterEvent(QDragEnterEvent *);
+    void dropEvent(QDropEvent *);
     Ui::MainWindow *ui;
     AboutDialog *about_;
     GTranslateDialog *trdlg;
     bool is_empty;
     bool is_opened;
 private slots:
-    void fileOpen();
+    void fileOpen(QString fname = "");
     void filePrint();
     void showabout();
     void setData();

@@ -7,6 +7,7 @@
 #include <QTextStream>
 #include <QPrintDialog>
 #include <QMessageBox>
+#include <QMimeData>
 #include "defines.h"
 QString const extern APP_NAME;
 viewer_mainwin::viewer_mainwin(QWidget *parent)
@@ -15,6 +16,7 @@ viewer_mainwin::viewer_mainwin(QWidget *parent)
     , trdlg(new GTranslateDialog)
 {
     ui->setupUi(this);
+    setAcceptDrops(true);
     is_opened = false;
     is_empty = false;
     actionSetup();
@@ -49,11 +51,20 @@ void viewer_mainwin::iconSetup(){
     ui->action_Translate->setIcon(ICON_TRANSLATE);
     qDebug() << "MSG:" << tr("Done");
 }
-void viewer_mainwin::fileOpen(){
-    QFileDialog filed;
-    QString name=filed.getOpenFileName(this,tr("Open file"),QDir::currentPath(),tr("Text files(*.txt);;"
-                                                                                   "HTML document(*.html *.htm);;"
-                                                                                   "All files(*.* *)"));
+void viewer_mainwin::fileOpen(QString fname){
+    QString name;
+    if(fname.isEmpty())
+    {
+        QFileDialog filed;
+        name=filed.getOpenFileName(this,tr("Open file"),QDir::currentPath(),tr("Text files(*.txt);;"
+                                                                                       "HTML document(*.html *.htm);;"
+                                                                                       "Markdown document(*.md *.markdown);;"
+                                                                                       "C/C++ Source code and Header(*.c *.cpp *.cc *.h *.cxx);;"
+                                                                                       "JavaScript(*.js);;"
+                                                                                       "All files(*.* *)"));
+    }else{
+        name = fname;
+    }
     if (name.isEmpty()){
         return;
     }
@@ -115,4 +126,18 @@ void viewer_mainwin::trDlgOpen(){
     if(trdlg->exec() == QDialog::Rejected){
         qWarning() << "Dialog closed unexpectedly: Rejected.";
     }
+}
+void viewer_mainwin::dragEnterEvent(QDragEnterEvent *e){
+    if(e->mimeData()->hasUrls())
+    {e->acceptProposedAction();}
+}
+void viewer_mainwin::dropEvent(QDropEvent *e){
+   if(e->mimeData()->urls().size() >= 2){
+       QMessageBox::critical(this,tr("Error"),tr("%1 files have been dragged at the same time. Even multiple files do not support reading.").arg(e->mimeData()->urls().size() ));
+   }else
+   {
+       QString draggedfile = e->mimeData()->urls().first().toLocalFile();
+       qDebug() << "Load:" << draggedfile;
+       fileOpen(draggedfile);
+   }
 }
