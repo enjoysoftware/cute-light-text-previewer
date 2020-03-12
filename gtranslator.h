@@ -6,7 +6,7 @@
 class GTranslator
 {
 public:
-    explicit GTranslator(QString targetLang_, QString sourceLang_, QString text_, QWidget *parentDialog);
+    explicit GTranslator(const QString &targetLang_, const QString &sourceLang_, const QString &text_, QWidget *parentDialog);
     ~GTranslator();
     QString translate();
 private:

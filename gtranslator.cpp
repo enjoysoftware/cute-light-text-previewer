@@ -10,7 +10,7 @@
 #include <QNetworkReply>
 #include <QMessageBox>
 #define REQUEST_URL "https://script.google.com/macros/s/AKfycbwq9ro5yWQdKXW4_QD0MCiw7WLuXiovK3V9aRmW/exec" //?target=%1&source=%2&text=%3"
-GTranslator::GTranslator(QString targetLang_, QString sourceLang_, QString text_,QWidget *parent) :  targetLang(targetLang_),
+GTranslator::GTranslator(const QString& targetLang_, const QString& sourceLang_, const QString& text_,QWidget *parent) :  targetLang(targetLang_),
     sourceLang(sourceLang_),text(text_),parentDialog(parent)
 {
     qDebug() << "targetLang -> " << targetLang << endl <<

@@ -13,7 +13,7 @@ class GTranslateDialog : public QDialog
 
 public:
     explicit GTranslateDialog(QWidget *parent = nullptr);
-    void setText(QString);
+    void setText(const QString &tmptext);
     ~GTranslateDialog();
 private:
     QString text;

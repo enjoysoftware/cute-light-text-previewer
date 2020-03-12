@@ -51,7 +51,7 @@ void viewer_mainwin::iconSetup(){
     ui->action_Translate->setIcon(ICON_TRANSLATE);
     qDebug() << "MSG:" << tr("Done");
 }
-void viewer_mainwin::fileOpen(QString fname){
+void viewer_mainwin::fileOpen(const QString &fname){
     QString name;
     if(fname.isEmpty())
     {

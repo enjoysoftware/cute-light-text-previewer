@@ -31,7 +31,7 @@ private:
     bool is_empty;
     bool is_opened;
 private slots:
-    void fileOpen(QString fname = "");
+    void fileOpen(const QString &fname = "");
     void filePrint();
     void showabout();
     void setData();
