@@ -77,19 +77,15 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="0" colspan="5">
-    <widget class="QTextBrowser" name="translatedText">
-     <property name="placeholderText">
-      <string/>
-     </property>
-    </widget>
-   </item>
    <item row="1" column="0" colspan="5">
     <widget class="QLabel" name="explainlabel">
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;After entering the source and target languages (for example, en, ja, ko,etc.),&lt;/p&gt;&lt;p&gt;click the 'Translate' button.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;After entering the source and target languages (ISO-639-1 Code),&lt;/p&gt;&lt;p&gt;click the 'Translate' button.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
+   </item>
+   <item row="3" column="0" colspan="5">
+    <widget class="QTextBrowser" name="translatedText"/>
    </item>
   </layout>
  </widget>
