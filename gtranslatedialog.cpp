@@ -37,7 +37,7 @@ void GTranslateDialog::setText(const QString& tmptext){
     return;
 }
 void GTranslateDialog::showEvent(QShowEvent *){
-    ui->translatedText->setText(text);
+    ui->translatedText->setPlainText(text);
 }
 void GTranslateDialog::boxCheck(){
     if(ui->sourceLangBox->text() != "" && ui->targetLangBox->text() != ""){
@@ -48,5 +48,5 @@ void GTranslateDialog::boxCheck(){
 }
 void GTranslateDialog::startTranslate(){
     GTranslator translator(ui->targetLangBox->text(),ui->sourceLangBox->text(),text,this);
-    ui->translatedText->setText(translator.translate());
+    ui->translatedText->setPlainText(translator.translate());
 }
