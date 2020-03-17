@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>QDarkStyleSheet/qdarkstyle/style.qss</file>
+    </qresource>
+</RCC>

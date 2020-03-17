@@ -1,0 +1,11 @@
+translations/*.qm
+core
+*.o
+*.core
+Makefile
+*.user*
+text-previewer
+.qmake.stash
+moc_*
+ui_*
+qrc_*
