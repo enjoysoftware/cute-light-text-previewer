@@ -21,7 +21,7 @@ viewer_mainwin::viewer_mainwin(QWidget *parent)
     is_empty = false;
     actionSetup();
     iconSetup();
-    QDir::setCurrent(QDir::homePath());
+    currentPath = QDir::homePath();
     ui->actionAbout->setText(tr("&About %1").arg(APP_NAME));
 }
 
@@ -56,7 +56,7 @@ void viewer_mainwin::fileOpen(const QString &fname){
     if(fname.isEmpty())
     {
         QFileDialog filed;
-        name=filed.getOpenFileName(this,tr("Open file"),QDir::currentPath(),tr("Text files(*.txt);;"
+        name = filed.getOpenFileName(this,tr("Open file"),currentPath,tr("Text files(*.txt);;"
                                                                                        "HTML document(*.html *.htm);;"
                                                                                        "Markdown document(*.md *.markdown);;"
                                                                                        "C/C++ Source code and Header(*.c *.cpp *.cc *.h *.cxx);;"
@@ -71,7 +71,7 @@ void viewer_mainwin::fileOpen(const QString &fname){
     QString content=loadFile(name);
     ui->textEdit->setPlainText(content);
     QFileInfo forpath(name);
-    QDir::setCurrent(forpath.absolutePath());
+    currentPath = forpath.absolutePath();
 }
 void viewer_mainwin::filePrint(){
     QPrintDialog pdlg;
