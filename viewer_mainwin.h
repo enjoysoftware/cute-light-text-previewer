@@ -18,20 +18,22 @@ class viewer_mainwin : public QMainWindow
 
 public:
     viewer_mainwin(QWidget *parent = nullptr);
+    QString currentPath;
     ~viewer_mainwin();
-    QString loadFile(QString);
+public slots:
+    void fileOpen(const QString &fname = "");
 private:
     void iconSetup();
     void actionSetup();
     void dragEnterEvent(QDragEnterEvent *);
     void dropEvent(QDropEvent *);
+    QString loadFile(QString);
     Ui::MainWindow *ui;
     AboutDialog *about_;
     GTranslateDialog *trdlg;
     bool is_empty;
     bool is_opened;
 private slots:
-    void fileOpen(const QString &fname = "");
     void filePrint();
     void showabout();
     void setData();
