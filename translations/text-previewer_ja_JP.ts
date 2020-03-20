@@ -311,6 +311,18 @@ Detail:%2</source>
         <source>Error: %2</source>
         <translation>エラー: %2</translation>
     </message>
+    <message>
+        <source>This application loads, and translates file.</source>
+        <translation>このアプリケーションは、ファイルを読み込み、そして翻訳を行います。</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>ファイル</translation>
+    </message>
+    <message>
+        <source>The file to open.</source>
+        <translation>開くファイル。</translation>
+    </message>
 </context>
 <context>
     <name>viewer_mainwin</name>
