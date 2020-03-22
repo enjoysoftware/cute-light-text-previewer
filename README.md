@@ -11,7 +11,7 @@ This software is open source and can open large text files in an instant. There 
 * Qt5 GUI
 * Qt5 Dev Tools(Linguist)
 * Qt5 Network
-* QDDarkStyleSheet (Usually, they are cloned as submodules.)
+* QDarkStyleSheet (Usually, they are cloned as submodules.)
 #### Linux
 
 Clone the source code. I also need a dark style, so add the recursive option.
@@ -33,3 +33,13 @@ After cloning the source code using Sourcetree, GitKraken, Git Bash, etc., execu
 Build is possible in both Visual Studio and MinGW.
 ### How to create an executable without dark style
 By removing "WITH_DARKSTYLE" from the "DEFINES" item in the cute-light-text-previewer.pro file, you can create an executable file without dark style.
+### How to get the latest source code and use the latest version
+To get the latest version of the source code, execute the following command with the master branch checked out.
+```bash
+git fetch
+git merge origin/master
+```
+Conflicts may occur depending on the status of the remote repository. In that case, execute the following command.
+```bash
+git reset --hard origin/master
+```
