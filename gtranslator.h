@@ -13,6 +13,8 @@ private:
     QString targetLang,sourceLang,text;
     QWidget *parentDialog;
     QString getData();
+    QString url;
+    QString getUrl();
 signals:
 
 };
