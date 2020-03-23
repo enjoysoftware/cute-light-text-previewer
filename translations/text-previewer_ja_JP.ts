@@ -333,6 +333,18 @@ In this case, a standard URL is used. As a result, errors may occur and translat
         <source>An error occurred when accessing.HTTP %1Use the default URL.</source>
         <translation>アクセスしている際にエラーが発生しました。HTTP %1 デフォルトURLを使用します。</translation>
     </message>
+    <message>
+        <source>This application loads, and translates file.</source>
+        <translation>このアプリケーションは、ファイルを読み込み、そして翻訳します。</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>ファイル</translation>
+    </message>
+    <message>
+        <source>The file to open.</source>
+        <translation>開くファイル。</translation>
+    </message>
 </context>
 <context>
     <name>viewer_mainwin</name>
