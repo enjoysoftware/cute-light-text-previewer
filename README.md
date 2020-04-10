@@ -2,7 +2,8 @@
 ## What is this?
 
 This software is open source and can open large text files in an instant. There is no file editing function. Because this software is a prototype of +Note text editor to be developed next. However, it is useful as a translator that works without a web browser.
-
+## Screenshot
+![Image](Screenshot.png)
 ## Building
 ### Requirements 
 
