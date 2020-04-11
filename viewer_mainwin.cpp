@@ -21,6 +21,7 @@ viewer_mainwin::viewer_mainwin(QWidget *parent)
     is_empty = false;
     actionSetup();
     iconSetup();
+    setCentralWidget(ui->textEdit);
     currentPath = QDir::homePath();
     ui->actionAbout->setText(tr("&About %1").arg(APP_NAME));
 }
