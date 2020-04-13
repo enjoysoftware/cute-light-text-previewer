@@ -9,7 +9,7 @@
 #include <QDebug>
 #include <QFileInfo>
 QString const extern APP_NAME=QObject::tr("Cute Light Text Previewer");
-QString const extern VERSION="1.0";
+QString const extern VERSION="2.0";
 QString const extern ORG_NAME="EnjoySoftware";
 int main(int argc, char *argv[])
 {
