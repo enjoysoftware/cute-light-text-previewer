@@ -34,10 +34,6 @@ FORMS += \
     gtranslatedialog.ui \
     viewer_mainwin.ui
 
-# Default rules for deployment.
-#qnx: target.path = /tmp/$${TARGET}/bin
-#else: unix:!android: target.path = /opt/$${TARGET}/bin
-#!isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
     icons.qrc \
@@ -57,3 +53,15 @@ updateqm.commands = $$LRELEASE ${QMAKE_FILE_IN} -qm ${QMAKE_FILE_PATH}/${QMAKE_F
 updateqm.name = LRELEASE ${QMAKE_FILE_IN}
 updateqm.CONFIG += no_link target_predeps
 QMAKE_EXTRA_COMPILERS += updateqm
+
+
+unix{
+isEmpty(PREFIX): PREFIX = /usr/local
+DATADIR = $$PREFIX/share
+desktop.path = $$DATADIR/applications
+target.path = $$PREFIX/bin
+message(Binary: $$PREFIX/bin)
+desktop.files = cute-light-text-previewer.desktop
+message(Data Directory: $$PREFIX/share)
+INSTALLS += desktop target
+}
