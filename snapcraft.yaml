@@ -1,0 +1,80 @@
+name: cute-light-text-previewer
+version: "2.0"
+summary: Open the file quickly and translate it into various languages.
+title: Cute Light Text Previewer
+license: GPL-3.0
+base: core18
+confinement: strict
+grade: stable
+description: |
+    Cute Light Text Previewer is a software that can open and translate files.  |
+    It is a very simple software and may be poor in functionality for everyday use, but it is very useful as a light-weight translator without a browser.
+apps:
+     text-previewer:
+       command: desktop-launch $SNAP/usr/bin/text-previewer
+       desktop: usr/share/applications/cute-light-text-previewer.desktop
+       environment:
+        QT_QPA_PLATFORMTHEME : gtk2
+       plugs: [x11, unity7, gsettings, pulseaudio, wayland, network, network-bind, home, locale-control, desktop, desktop-legacy]
+parts:
+     text-previewer: 
+        plugin: qmake
+        qt-version: qt5
+        project-files: [cute-light-text-previewer.pro]
+        source: .
+        override-build: |
+          qmake PREFIX=$SNAPCRAFT_PART_INSTALL/usr
+          make 
+          make install
+         # sed -i 's|Icon=system-search|Icon=/usr/share/pixmaps/system-search\.png|' $SNAPCRAFT_PART_INSTALL/usr/share/applications/cute-light-text-previewer.desktop
+        build-packages:
+          - qt5-default
+          - qtbase5-dev
+          - qttools5-dev
+        stage-packages:
+          - libqt5gui5
+          - libqt5printsupport5
+        after: [desktop-qt5]
+     desktop-qt5:
+      build-packages:
+          - build-essential
+          - qtbase5-dev
+          - dpkg-dev
+      make-parameters:
+          - FLAVOR=qt5
+      plugin: make
+      source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
+      source-subdir: qt
+      stage-packages:
+          - libxkbcommon0
+          - ttf-ubuntu-font-family
+          - dmz-cursor-theme
+          - light-themes
+          - adwaita-icon-theme
+          - gnome-themes-standard
+          - shared-mime-info
+          - libqt5gui5
+          - libgdk-pixbuf2.0-0
+          - libqt5svg5
+          - try:
+            - appmenu-qt5
+          - locales-all
+          - xdg-user-dirs
+          - fcitx-frontend-qt5
+     qt5-gtk-platform:
+      plugin: nil
+      stage-packages:
+          - qt5-gtk-platformtheme
+plugs:
+  gtk-3-themes:
+    interface: content
+    target: $SNAP/share/themes
+    default-provider: gtk-common-themes:gtk-3-themes
+  icon-themes:
+    interface: content
+    target: $SNAP/share/icons
+    default-provider: gtk-common-themes:icon-themes
+  sound-themes:
+    interface: content
+    target: $SNAP/share/sounds
+    default-provider: gtk-common-themes:sounds-themes
