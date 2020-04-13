@@ -9,3 +9,7 @@ text-previewer
 moc_*
 ui_*
 qrc_*
+prime/*
+stage/*
+snap/*
+parts/*
