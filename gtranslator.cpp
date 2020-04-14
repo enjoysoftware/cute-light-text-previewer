@@ -30,16 +30,32 @@ QString GTranslator::translate(){
     QString data = getData();
 //    qDebug() << "Receved data:" << data;
     QJsonObject jsonObj= QJsonDocument::fromJson(data.toUtf8()).object();
-    int code = jsonObj["code"].toInt();
+    QString stat = jsonObj["stat"].toString();
     QString text= jsonObj["text"].toString();
-    qDebug() << "Code:" << code << "Text:" << text;
-    if(code !=200 && code != 1000){
-        QMessageBox::warning(parentDialog,QObject::tr("Error"),QObject::tr("Error: %2").arg(text));
+    qDebug() << "Status:" << stat << "Text:" << text;
+    if(stat !="ok" && stat != "local-error" && stat != "warning"){
+        QMessageBox::warning(parentDialog,QObject::tr("Error"),QObject::tr("Error: %1").arg(text));
         return QObject::tr("Error: %1").arg(text);
-    }else if(code == 1000){
+    }else if(stat == "local-error"){
         return QObject::tr("Error: %1").arg(text);
+    }else if(stat == "service-closed"){
+        QMessageBox::information(parentDialog,QObject::tr("Sorry,This service has ended"),QObject::tr("Sorry, translation functionality is no longer provided. "
+                                                                            "Functions other than the translation function can still be used."
+                                                                            "Message from server:%1").arg(text));
+        return QObject::tr("Translation service has ended");
+    }else if(stat == "ok"){
+            return text;
+    }else if(stat == "warning"){
+        QMessageBox::warning(parentDialog,QObject::tr("Warning"),QObject::tr("Warning: %1").arg(text));
+        return QObject::tr("Warning: %1").arg(text);
+    }else{
+
+        QMessageBox::critical(parentDialog,QObject::tr("Invalid status: %1").arg(stat),QObject::tr("An error has occurred that should not normally occur.\n"
+                                                                                     "-Try rebuilding or reinstalling this application.\n"
+                                                                                     "-There may be a problem with the API on the Web. Please wait a while and try again. \n"
+                                                                                     "- Please retry after updating version of this software."));
+        return QObject::tr("Invalid status: %1").arg(stat);
     }
-    return text;
 }
 QString GTranslator::getData(){
         QNetworkRequest request;
@@ -59,10 +75,9 @@ QString GTranslator::getData(){
         waitLoop.exec();
         QObject::disconnect( reply, SIGNAL(finished()), &waitLoop, SLOT(quit()));
         if( reply->error() != QNetworkReply::NoError ){
-            //通信中のエラーが発生したときはエラーコード1000
             qCritical() << "Error: " << reply->errorString();
             QMessageBox::warning(parentDialog,QObject::tr("Error"),reply->errorString());
-            return QObject::tr("{\"code\": 1000 ,\"text\": \"%1\"}").arg(reply->errorString());
+            return QObject::tr("{\"stat\": \"local-error\" ,\"text\": \"%1\"}").arg(reply->errorString());
         }else {
             int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
             switch (statusCode) {
@@ -81,9 +96,8 @@ QString GTranslator::getData(){
 
                 case 200:
                 default:
-                //コード900は正常にリダイレクトされなかったとき
                 qDebug() << "Error: language may be incorrect";
-                return QObject::tr("{\"code\": 900 ,\"text\": \"What should have been redirected is not redirected. \n"
+                return QObject::tr("{\"stat\": \"local-error\" ,\"text\": \"What should have been redirected is not redirected. \n"
                                    "- Check that the language specification is correct.\n"
                                    "- The target string may be too long. Try shortening the string.\"}");
                 break;
