@@ -40,7 +40,7 @@ void GTranslateDialog::showEvent(QShowEvent *){
     ui->translatedText->setPlainText(text);
 }
 void GTranslateDialog::boxCheck(){
-    if(ui->sourceLangBox->text() != "" && ui->targetLangBox->text() != ""){
+    if(ui->targetLangBox->text() != ""){
         ui->translateButton->setEnabled(true);
     }else{
         ui->translateButton->setEnabled(false);
