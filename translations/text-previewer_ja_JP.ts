@@ -139,7 +139,7 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;設計、プログラミングすべて&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:16pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;EnjoySoftware&amp;lt;(C) 2020 EnjoySoftware&amp;gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;EnjoySoftware&amp;lt;(C) 2020 EnjoySoftware&amp;gt;&lt;br /&gt;翻訳の誤字、脱字、バグはhttps://github.com/enjoysoftware/cute-light-text-previewer/issuesまで。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -178,7 +178,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;After entering the source and target languages (ISO-639-1 Code),&lt;/p&gt;&lt;p&gt;click the &apos;Translate&apos; button.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;元の言語と翻訳先言語を指定し、&lt;/p&gt;&lt;p&gt;「翻訳」ボタンをクリックしてください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;元の言語と翻訳先言語を指定し(ISO 639-1コードを指定)、&lt;/p&gt;&lt;p&gt;「翻訳」ボタンをクリックしてください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -327,7 +327,7 @@ In this case, a standard URL is used. As a result, errors may occur and translat
         <translation>ダウンロード先URLを取得している際にエラーが発生しました。
 エラーメッセージ：%1
 このプログラムにバグがある可能性があります。最新バージョンを使用してください。
-このエラーが発生した場合、標準のURLが使われます。このURLを使用した場合、エラーが発生し、正しく翻訳できないかの製があります。</translation>
+このエラーが発生した場合、標準のURLが使われます。このURLを使用した場合、エラーが発生し、正しく翻訳できない可能性があります。</translation>
     </message>
     <message>
         <source>An error occurred when accessing.HTTP %1Use the default URL.</source>
