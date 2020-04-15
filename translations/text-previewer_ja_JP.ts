@@ -139,7 +139,7 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;設計、プログラミングすべて&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:16pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;EnjoySoftware&amp;lt;(C) 2020 EnjoySoftware&amp;gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;EnjoySoftware&amp;lt;(C) 2020 EnjoySoftware&amp;gt;&lt;br /&gt;翻訳の誤字、脱字、バグはhttps://github.com/enjoysoftware/cute-light-text-previewer/issuesまで。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -162,7 +162,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Please type here</source>
-        <translation>ここに入力してください</translation>
+        <translation type="vanished">ここに入力してください</translation>
     </message>
     <message>
         <source>Source Language:</source>
@@ -178,7 +178,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;After entering the source and target languages (ISO-639-1 Code),&lt;/p&gt;&lt;p&gt;click the &apos;Translate&apos; button.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;元の言語と翻訳先言語を指定し、&lt;/p&gt;&lt;p&gt;「翻訳」ボタンをクリックしてください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;元の言語と翻訳先言語を指定し、&lt;/p&gt;&lt;p&gt;「翻訳」ボタンをクリックしてください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Leave this empty to automatically detect the source language</source>
+        <translation>この欄を空欄にすることで自動で言語を検出します</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;After entering the source and target languages (Please use ISO-639-1 Code),&lt;/p&gt;&lt;p&gt;click the &apos;Translate&apos; button. If you leave the source language box empty, the source language will be detected automatically.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;翻訳先言語と翻訳元言語を指定し、( ISO-639-1 コードを使ってください),&lt;/p&gt;&lt;p&gt;「翻訳」ボタンをクリックしてください。もし、翻訳元言語欄を空欄にした場合、自動で翻訳元言語を検出します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -301,7 +309,7 @@ Detail:%2</source>
     </message>
     <message>
         <source>{&quot;code&quot;: 1000 ,&quot;text&quot;: &quot;%1&quot;}</source>
-        <translation>{&quot;code&quot;: 1000 ,&quot;text&quot;: &quot;%1&quot;}</translation>
+        <translation type="vanished">{&quot;code&quot;: 1000 ,&quot;text&quot;: &quot;%1&quot;}</translation>
     </message>
     <message>
         <source>{&quot;code&quot;: 900 ,&quot;text&quot;: &quot;What should have been redirected is not redirected. Check that the language specification is correct.&quot;}</source>
@@ -309,13 +317,13 @@ Detail:%2</source>
     </message>
     <message>
         <source>Error: %2</source>
-        <translation>エラー: %2</translation>
+        <translation type="vanished">エラー: %2</translation>
     </message>
     <message>
         <source>{&quot;code&quot;: 900 ,&quot;text&quot;: &quot;What should have been redirected is not redirected. 
 - Check that the language specification is correct.
 - The target string may be too long. Try shortening the string.&quot;}</source>
-        <translation>{&quot;code&quot;: 900 ,&quot;text&quot;: &quot;リダイレクトされるべきところがリダイレクトされていません。
+        <translation type="vanished">{&quot;code&quot;: 900 ,&quot;text&quot;: &quot;リダイレクトされるべきところがリダイレクトされていません。
 - 言語指定が正しいか確認してください。
 - 翻訳する対象の文字列が長すぎる可能性あります。文字列を短くして試してみてください。&quot;}</translation>
     </message>
@@ -327,7 +335,7 @@ In this case, a standard URL is used. As a result, errors may occur and translat
         <translation>ダウンロード先URLを取得している際にエラーが発生しました。
 エラーメッセージ：%1
 このプログラムにバグがある可能性があります。最新バージョンを使用してください。
-このエラーが発生した場合、標準のURLが使われます。このURLを使用した場合、エラーが発生し、正しく翻訳できないかの製があります。</translation>
+このエラーが発生した場合、標準のURLが使われます。このURLを使用した場合、エラーが発生し、正しく翻訳できない可能性があります。</translation>
     </message>
     <message>
         <source>An error occurred when accessing.HTTP %1Use the default URL.</source>
@@ -344,6 +352,52 @@ In this case, a standard URL is used. As a result, errors may occur and translat
     <message>
         <source>The file to open.</source>
         <translation>開くファイル。</translation>
+    </message>
+    <message>
+        <source>Sorry,This service has ended</source>
+        <translation>申し訳ありませんが、このサービスは終了しました</translation>
+    </message>
+    <message>
+        <source>Sorry, translation functionality is no longer provided. Functions other than the translation function can still be used.Message from server:%1</source>
+        <translation>申し訳ありませんが、翻訳機能のサポートは終了いたしました。翻訳機能以外は引き続きお使いいただけます。サーバからのメッセージ: %1</translation>
+    </message>
+    <message>
+        <source>Translation service has ended</source>
+        <translation>翻訳サービスは終了しました</translation>
+    </message>
+    <message>
+        <source>Invalid status: %1</source>
+        <translation>無効なステータスです : %1</translation>
+    </message>
+    <message>
+        <source>An error has occurred that should not normally occur.
+-Try rebuilding or reinstalling this application.
+-There may be a problem with the API on the Web. Please wait a while and try again. 
+- Please retry after updating version of this software.</source>
+        <translation>通常は起こらないエラーが発生しました。
+-このアプリケーションを再ビルドまたは再インストールしてみてください。
+-Web上のAPIに問題がある可能性があります。しばらく待ってから再度お試しください。
+- このソフトウェアのバージョンをアップデートしてから再度お試しください。。</translation>
+    </message>
+    <message>
+        <source>{&quot;stat&quot;: &quot;local-error&quot; ,&quot;text&quot;: &quot;%1&quot;}</source>
+        <translation>{&quot;stat&quot;: &quot;local-error&quot; ,&quot;text&quot;: &quot;%1&quot;}</translation>
+    </message>
+    <message>
+        <source>{&quot;stat&quot;: &quot;local-error&quot; ,&quot;text&quot;: &quot;What should have been redirected is not redirected. 
+- Check that the language specification is correct.
+- The target string may be too long. Try shortening the string.&quot;}</source>
+        <translation>{&quot;stat&quot;: &quot;local-error&quot; ,&quot;text&quot;: &quot;リダイレクトされるべきところがリダイレクトされていません。 
+- 言語指定が正しいか確認してください。
+- 変換対象の文字列が長すぎる可能性があります。文字列を短くして試してみてください。&quot;}</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>Warning: %1</source>
+        <translation>警告: %1</translation>
     </message>
 </context>
 <context>
