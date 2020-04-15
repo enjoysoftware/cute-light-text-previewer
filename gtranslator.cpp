@@ -11,7 +11,7 @@
 #include <QMessageBox>
 #include <QProgressDialog>
 //↓リリースする際は、ブランチ名を合わせる。例：hotfix→develop→master
-#define FETCH_URL "https://raw.githubusercontent.com/enjoysoftware/cute-light-text-previewer/master/Api_fetch_url.txt"
+#define FETCH_URL "https://raw.githubusercontent.com/enjoysoftware/cute-light-text-previewer/master/Api_fetch_url_new.txt"
 //Emergency緊急↓
 #define REQUEST_URL_TMP "https://script.google.com/macros/s/AKfycbwq9ro5yWQdKXW4_QD0MCiw7WLuXiovK3V9aRmW/exec"
 GTranslator::GTranslator(const QString& targetLang_, const QString& sourceLang_, const QString& text_,QWidget *parent) :  targetLang(targetLang_),
@@ -33,10 +33,8 @@ QString GTranslator::translate(){
     QString stat = jsonObj["stat"].toString();
     QString text= jsonObj["text"].toString();
     qDebug() << "Status:" << stat << "Text:" << text;
-    if(stat !="ok" && stat != "local-error" && stat != "warning"){
-        QMessageBox::warning(parentDialog,QObject::tr("Error"),QObject::tr("Error: %1").arg(text));
-        return QObject::tr("Error: %1").arg(text);
-    }else if(stat == "local-error"){
+    if(stat == "local-error" || stat == "error"){
+        QMessageBox::critical(parentDialog,QObject::tr("Error"),QObject::tr("Error: %1").arg(text));
         return QObject::tr("Error: %1").arg(text);
     }else if(stat == "service-closed"){
         QMessageBox::information(parentDialog,QObject::tr("Sorry,This service has ended"),QObject::tr("Sorry, translation functionality is no longer provided. "
