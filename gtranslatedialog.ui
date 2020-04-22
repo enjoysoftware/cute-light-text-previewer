@@ -21,6 +21,13 @@
      </property>
     </widget>
    </item>
+   <item row="2" column="1">
+    <widget class="QLineEdit" name="sourceLangBox">
+     <property name="placeholderText">
+      <string>Please type here</string>
+     </property>
+    </widget>
+   </item>
    <item row="4" column="0" colspan="5">
     <widget class="QDialogButtonBox" name="closeButton">
      <property name="orientation">
@@ -31,16 +38,6 @@
      </property>
      <property name="centerButtons">
       <bool>false</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="3">
-    <widget class="QLineEdit" name="targetLangBox">
-     <property name="readOnly">
-      <bool>false</bool>
-     </property>
-     <property name="placeholderText">
-      <string>Target locale</string>
      </property>
     </widget>
    </item>
@@ -56,6 +53,7 @@
      </property>
     </widget>
    </item>
+<<<<<<< Updated upstream
    <item row="2" column="1">
     <widget class="QLineEdit" name="sourceLangBox">
      <property name="text">
@@ -66,6 +64,8 @@
      </property>
     </widget>
    </item>
+=======
+>>>>>>> Stashed changes
    <item row="2" column="0">
     <widget class="QLabel" name="sourceLang_label">
      <property name="text">
@@ -89,6 +89,9 @@
    </item>
    <item row="3" column="0" colspan="5">
     <widget class="QTextBrowser" name="translatedText"/>
+   </item>
+   <item row="2" column="3">
+    <widget class="QComboBox" name="comboBox"/>
    </item>
   </layout>
  </widget>

@@ -5,27 +5,31 @@
 #include <QLocale>
 #include <QDebug>
 #include <QMessageBox>
+#include <QFile>
+#include <QTextStream>
 GTranslateDialog::GTranslateDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::GTranslateDialog)
 {
     ui->setupUi(this);
     ui->translateButton->setEnabled(false);
-    connect(ui->targetLangBox,SIGNAL(textChanged(const QString&)),this,SLOT(boxCheck()));
     connect(ui->sourceLangBox,SIGNAL(textChanged(const QString &)),this,SLOT(boxCheck()));
     QString locale=QLocale::system().name();
-    qDebug() << "Guess language...";
-    if(locale.length() >= 2){
-    language=locale.mid(0,2);
-    }else if(locale == "C"){
-        language="en";
-    }else {
-        language=locale;
+    QFile langfile("resources/lang.list");
+    if(!langfile.open(QIODevice::ReadOnly | QFile::Text)){
+    QMessageBox::information(this,"Debug",langfile.errorString());
+    }else{
+        QTextStream str(&langfile);
+        QString list;
+        while(!str.atEnd()){
+        list = str.readLine().trimmed();
+        qDebug() << list;
+        QStringList data = list.split("=");
+        ui->comboBox->addItem(data[0],data[1]);
+        qDebug() << data[0] << "," << data[1];
+        }
+        langfile.close();
     }
-    ui->targetLangBox->setText(language);
-//    GTranslator tra(language,"en","Please type here",this);
-//    ui->translatedText->setText(tra.translate());
-//    qDebug() << "Language :" << language;
 }
 
 GTranslateDialog::~GTranslateDialog()
@@ -40,13 +44,21 @@ void GTranslateDialog::showEvent(QShowEvent *){
     ui->translatedText->setPlainText(text);
 }
 void GTranslateDialog::boxCheck(){
+<<<<<<< Updated upstream
     if(ui->targetLangBox->text() != ""){
         ui->translateButton->setEnabled(true);
     }else{
         ui->translateButton->setEnabled(false);
     }
+=======
+//    if(ui->sourceLangBox->text() != "" && ui->targetLangBox->text() != ""){
+//        ui->translateButton->setEnabled(true);
+//    }else{
+//        ui->translateButton->setEnabled(false);
+//    }
+>>>>>>> Stashed changes
 }
 void GTranslateDialog::startTranslate(){
-    GTranslator translator(ui->targetLangBox->text(),ui->sourceLangBox->text(),text,this);
-    ui->translatedText->setPlainText(translator.translate());
+//    GTranslator translator(ui->targetLangBox->text(),ui->sourceLangBox->text(),text,this);
+//    ui->translatedText->setPlainText(translator.translate());
 }
