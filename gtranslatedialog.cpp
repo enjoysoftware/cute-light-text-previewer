@@ -44,19 +44,11 @@ void GTranslateDialog::showEvent(QShowEvent *){
     ui->translatedText->setPlainText(text);
 }
 void GTranslateDialog::boxCheck(){
-<<<<<<< Updated upstream
-    if(ui->targetLangBox->text() != ""){
-        ui->translateButton->setEnabled(true);
-    }else{
-        ui->translateButton->setEnabled(false);
-    }
-=======
 //    if(ui->sourceLangBox->text() != "" && ui->targetLangBox->text() != ""){
 //        ui->translateButton->setEnabled(true);
 //    }else{
 //        ui->translateButton->setEnabled(false);
 //    }
->>>>>>> Stashed changes
 }
 void GTranslateDialog::startTranslate(){
 //    GTranslator translator(ui->targetLangBox->text(),ui->sourceLangBox->text(),text,this);
