@@ -36,6 +36,7 @@ FORMS += \
 
 
 RESOURCES += \
+    files.qrc \
     icons.qrc \
     theme.qrc \
     translations.qrc
