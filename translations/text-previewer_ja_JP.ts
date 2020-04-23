@@ -154,7 +154,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Target locale</source>
-        <translation>ターゲットロケール</translation>
+        <translation type="vanished">ターゲットロケール</translation>
     </message>
     <message>
         <source>Translate</source>
@@ -182,11 +182,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Leave this empty to automatically detect the source language</source>
-        <translation>この欄を空欄にすることで自動で言語を検出します</translation>
+        <translation type="vanished">この欄を空欄にすることで自動で言語を検出します</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;After entering the source and target languages (Please use ISO-639-1 Code),&lt;/p&gt;&lt;p&gt;click the &apos;Translate&apos; button. If you leave the source language box empty, the source language will be detected automatically.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;翻訳先言語と翻訳元言語を指定し、( ISO-639-1 コードを使ってください),&lt;/p&gt;&lt;p&gt;「翻訳」ボタンをクリックしてください。もし、翻訳元言語欄を空欄にした場合、自動で翻訳元言語を検出します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;翻訳先言語と翻訳元言語を指定し、( ISO-639-1 コードを使ってください),&lt;/p&gt;&lt;p&gt;「翻訳」ボタンをクリックしてください。もし、翻訳元言語欄を空欄にした場合、自動で翻訳元言語を検出します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Auto detect</source>
+        <translation>自動検出</translation>
+    </message>
+    <message>
+        <source>Can&apos;t read resource file</source>
+        <translation>リソースファイルをロードできません</translation>
+    </message>
+    <message>
+        <source>Error message: %1</source>
+        <translation>エラーメッセージ: %1</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;After choosing the source and target languages (Please use ISO-639-1 Code),&lt;/p&gt;&lt;p&gt;click the &apos;Translate&apos; button.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ソース言語とターゲット言語を選択した後（ISO-639-1コードを使用してください）、&lt;/p&gt;&lt;p&gt;「翻訳」ボタンをクリックします。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
