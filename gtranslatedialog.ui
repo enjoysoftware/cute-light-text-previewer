@@ -57,7 +57,7 @@
    <item row="1" column="0" colspan="5">
     <widget class="QLabel" name="explainlabel">
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;After choosing the source and target languages (Please use ISO-639-1 Code),&lt;/p&gt;&lt;p&gt;click the 'Translate' button.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;After choosing the source and target languages,click the 'Translate' button.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </item>
