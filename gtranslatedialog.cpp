@@ -12,7 +12,6 @@ GTranslateDialog::GTranslateDialog(QWidget *parent) :
     ui(new Ui::GTranslateDialog)
 {
     ui->setupUi(this);
-    ui->translateButton->setEnabled(false);
     QString locale=QLocale::system().name();
     QFile langfile(":/resources/lang.list");
     if(!langfile.open(QIODevice::ReadOnly | QFile::Text)){
@@ -44,7 +43,8 @@ void GTranslateDialog::setText(const QString& tmptext){
 void GTranslateDialog::showEvent(QShowEvent *){
     ui->translatedText->setPlainText(text);
 }
-void GTranslateDialog::boxCheck(){
-}
 void GTranslateDialog::startTranslate(){
+    GTranslator translator(ui->comboBox->currentData().toString(),ui->sourceLangCombo->currentData().toString(),text,this);
+    QString translated = translator.translate();
+    ui->translatedText->setPlainText(translated);
 }
