@@ -32,7 +32,7 @@ QString GTranslator::translate(){
     QJsonObject jsonObj= QJsonDocument::fromJson(data.toUtf8()).object();
     QString stat = jsonObj["stat"].toString();
     QString text= jsonObj["text"].toString();
-    qDebug() << "Status:" << stat << "Text:" << text;
+    qDebug() << "Status:" << stat << "Text:" << text.mid(0,4) + "...";
     if(stat == "local-error" || stat == "error"){
         QMessageBox::critical(parentDialog,QObject::tr("Error"),QObject::tr("Error: %1").arg(text));
         return QObject::tr("Error: %1").arg(text);
@@ -89,7 +89,6 @@ QString GTranslator::getData(){
                     QObject::connect( reply, SIGNAL(finished()), &waitLoop, SLOT(quit()) );
                     waitLoop.exec();
                     QObject::disconnect( reply, SIGNAL(finished()), &waitLoop, SLOT(quit()));
-
                     break;
 
                 case 200:
