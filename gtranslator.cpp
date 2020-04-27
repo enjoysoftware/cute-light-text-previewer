@@ -92,6 +92,7 @@ QString GTranslator::getData(){
                     break;
 
                 case 200:
+                qDebug() << "Code is 200";
                 default:
                 qDebug() << "Error: language may be incorrect";
                 return QObject::tr("{\"stat\": \"local-error\" ,\"text\": \"What should have been redirected is not redirected. \n"
