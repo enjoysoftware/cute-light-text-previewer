@@ -10,12 +10,12 @@ description: |
     Cute Light Text Previewer is a software that can open and translate files.  |
     It is a very simple software and may be poor in functionality for everyday use, but it is very useful as a light-weight translator without a browser.
 apps:
-     text-previewer:
+     cute-light-text-previewer:
        command: desktop-launch $SNAP/usr/bin/text-previewer
        desktop: usr/share/applications/cute-light-text-previewer.desktop
        environment:
         QT_QPA_PLATFORMTHEME : gtk2
-       plugs: [x11, unity7, gsettings, pulseaudio, wayland, network, network-bind, home, locale-control, desktop, desktop-legacy]
+       plugs: [x11, unity7, gsettings, pulseaudio, wayland, network, network-bind, home, desktop, desktop-legacy]
 parts:
      text-previewer: 
         plugin: qmake
