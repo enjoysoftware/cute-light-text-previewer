@@ -42,6 +42,10 @@ RESOURCES += \
     translations.qrc
 TRANSLATIONS = \
     translations/text-previewer_ja_JP.ts
+
+SOURCES += $$files(3rd-party/uchardet/*.cpp, false)
+HEADERS  += $$files(3rd-party/uchardet/*.h, false)
+
 #LUPDATE = $$[QT_INSTALL_BINS]/lupdate -locations absolute -no-obsolete
 LRELEASE = $$QMAKE_LRELEASE
 isEmpty(LRELEASE):LRELEASE = $$[QT_INSTALL_BINS]/lrelease
