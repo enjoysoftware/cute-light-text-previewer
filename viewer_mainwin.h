@@ -28,6 +28,7 @@ private:
     void dragEnterEvent(QDragEnterEvent *);
     void dropEvent(QDropEvent *);
     QString loadFile(QString);
+    QByteArray detectEncoding(const QByteArray &text);
     Ui::MainWindow *ui;
     AboutDialog *about_;
     GTranslateDialog *trdlg;
