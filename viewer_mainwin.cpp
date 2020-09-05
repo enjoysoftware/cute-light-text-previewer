@@ -145,10 +145,8 @@ void viewer_mainwin::dropEvent(QDropEvent *e){
    }
 }
 QByteArray viewer_mainwin::detectEncoding(const QByteArray &text){
-    // Limit decoding to the first 64 kilobytes
     size_t size = static_cast<size_t>(std::min(text.size(), 65536));
 
-    // Use uchardet to try and detect file encoding if no BOM was found
     uchardet_t detector = uchardet_new();
     uchardet_handle_data(detector, text.data(), size);
     uchardet_data_end(detector);
