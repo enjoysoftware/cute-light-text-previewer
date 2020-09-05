@@ -2,7 +2,6 @@ name: cute-light-text-previewer
 version: "2.0"
 summary: Open the file quickly and translate it into various languages.
 title: Cute Light Text Previewer
-license: GPL-3.0
 base: core18
 confinement: strict
 grade: stable
