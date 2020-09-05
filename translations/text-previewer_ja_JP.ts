@@ -123,7 +123,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>GPL Version 3</source>
-        <translation>GPL バージョン3</translation>
+        <translation type="vanished">GPL バージョン3</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -140,6 +140,10 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;設計、プログラミングすべて&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:16pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;EnjoySoftware&amp;lt;(C) 2020 EnjoySoftware&amp;gt;&lt;br /&gt;翻訳の誤字、脱字、バグはhttps://github.com/enjoysoftware/cute-light-text-previewer/issuesまで。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>LGPL Version 3 or later</source>
+        <translation>LGPL バージョン3以降</translation>
     </message>
 </context>
 <context>
