@@ -90,9 +90,9 @@ QString GTranslator::getData(){
                     waitLoop.exec();
                     QObject::disconnect( reply, SIGNAL(finished()), &waitLoop, SLOT(quit()));
                     break;
-
                 case 200:
                 qDebug() << "Code is 200";
+                break;
                 default:
                 qDebug() << "Error: language may be incorrect";
                 return QObject::tr("{\"stat\": \"local-error\" ,\"text\": \"What should have been redirected is not redirected. \n"
