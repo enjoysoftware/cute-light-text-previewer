@@ -17,8 +17,8 @@
 GTranslator::GTranslator(const QString& targetLang_, const QString& sourceLang_, const QString& text_,QWidget *parent) :  targetLang(targetLang_),
     sourceLang(sourceLang_),text(text_),parentDialog(parent)
 {
-    qDebug() << "targetLang -> " << targetLang << endl <<
-                "sourceLang -> " << sourceLang << endl <<
+    qDebug() << "targetLang -> " << targetLang << "\n" <<
+                "sourceLang -> " << sourceLang << "\n" <<
                 "text -> " << text;
     url = getUrl();
 }
@@ -28,7 +28,7 @@ GTranslator::~GTranslator(){
 QString GTranslator::translate(){
     qDebug() << "Translating from" << sourceLang << "to" << targetLang;
     QString data = getData();
-//    qDebug() << "Receved data:" << data;
+//    qDebug() << "Received data:" << data;
     QJsonObject jsonObj= QJsonDocument::fromJson(data.toUtf8()).object();
     QString stat = jsonObj["stat"].toString();
     QString text= jsonObj["text"].toString();
@@ -66,7 +66,7 @@ QString GTranslator::getData(){
         postData.addQueryItem("source", sourceLang);
         postData.addQueryItem("target", targetLang);
         QNetworkAccessManager accsMgr;
-        accsMgr.setNetworkAccessible( QNetworkAccessManager::Accessible );
+//        accsMgr.setNetworkAccessible( QNetworkAccessManager::Accessible );
         QNetworkReply *reply = accsMgr.post(request,postData.toString(QUrl::FullyEncoded).toUtf8());
         QEventLoop waitLoop;
         QObject::connect( reply, SIGNAL(finished()), &waitLoop, SLOT(quit()));
@@ -83,7 +83,7 @@ QString GTranslator::getData(){
                 case 302:
                 case 307:
                 //Redirect
-                    //qDebug() << "Redirected: " << reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
+//                    qDebug() << "Redirected: " << reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
                     request.setUrl(reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl());
                     reply = accsMgr.get(request);//,postData.toString(QUrl::FullyEncoded).toUtf8());
                     QObject::connect( reply, SIGNAL(finished()), &waitLoop, SLOT(quit()) );
@@ -111,7 +111,7 @@ QString GTranslator::getUrl(){
     QUrl httpurl(FETCH_URL);
     request.setUrl(httpurl);
     QNetworkAccessManager accsMgr;
-    accsMgr.setNetworkAccessible(QNetworkAccessManager::Accessible);
+//    accsMgr.setNetworkAccessible(QNetworkAccessManager::Accessible);
     QNetworkReply *reply = accsMgr.get(request);
     QEventLoop *eventloop = new QEventLoop();
     QObject::connect(reply,SIGNAL(finished()),eventloop,SLOT(quit()));
