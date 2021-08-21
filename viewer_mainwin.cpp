@@ -102,11 +102,11 @@ QString viewer_mainwin::loadFile(QString filename){
     lines=0;
     while (!in.atEnd()){
         lines++;
-        line +=in.readLine()+"\n";
+        line += in.readLine().toUtf8()+"\n";
     }
     ui->statusbar->showMessage(tr("Opened \"%1\" :%2 lines").arg(filename,QString::number(lines)));
     is_opened = true;
-    qDebug() << detectEncoding(line);
+//    qDebug() << detectEncoding(line);
     return line;
 }
 void viewer_mainwin::showabout(){
@@ -144,12 +144,12 @@ void viewer_mainwin::dropEvent(QDropEvent *e){
        fileOpen(draggedfile);
    }
 }
-QByteArray viewer_mainwin::detectEncoding(const QByteArray &text){
-    size_t size = static_cast<size_t>(std::min(text.size(), 65536));
+//QByteArray viewer_mainwin::detectEncoding(const QByteArray &text){
+//    size_t size = static_cast<size_t>(std::min(text.size(), 65536));
 
-    uchardet_t detector = uchardet_new();
-    uchardet_handle_data(detector, text.data(), size);
-    uchardet_data_end(detector);
-    QByteArray encoding = uchardet_get_charset(detector);
-    return encoding;
-}
+//    uchardet_t detector = uchardet_new();
+//    uchardet_handle_data(detector, text.data(), size);
+//    uchardet_data_end(detector);
+//    QByteArray encoding = uchardet_get_charset(detector);
+//    return encoding;
+//}
