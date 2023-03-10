@@ -9,7 +9,6 @@
 #include <QMessageBox>
 #include <QMimeData>
 #include "defines.h"
-#include "3rd-party/uchardet/uchardet.h"
 QString const extern APP_NAME;
 viewer_mainwin::viewer_mainwin(QWidget *parent)
     : QMainWindow(parent)
@@ -97,7 +96,7 @@ QString viewer_mainwin::loadFile(QString filename){
         return tr("Error:\n%1").arg(errMsg);
     }
     QTextStream in(&qfilename);
-    QByteArray line;
+    QString line;
     int lines;
     lines=0;
     while (!in.atEnd()){
@@ -106,7 +105,6 @@ QString viewer_mainwin::loadFile(QString filename){
     }
     ui->statusbar->showMessage(tr("Opened \"%1\" :%2 lines").arg(filename,QString::number(lines)));
     is_opened = true;
-//    qDebug() << detectEncoding(line);
     return line;
 }
 void viewer_mainwin::showabout(){
@@ -144,12 +142,3 @@ void viewer_mainwin::dropEvent(QDropEvent *e){
        fileOpen(draggedfile);
    }
 }
-//QByteArray viewer_mainwin::detectEncoding(const QByteArray &text){
-//    size_t size = static_cast<size_t>(std::min(text.size(), 65536));
-
-//    uchardet_t detector = uchardet_new();
-//    uchardet_handle_data(detector, text.data(), size);
-//    uchardet_data_end(detector);
-//    QByteArray encoding = uchardet_get_charset(detector);
-//    return encoding;
-//}
