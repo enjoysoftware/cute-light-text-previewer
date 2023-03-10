@@ -1,4 +1,7 @@
 # Cute Light Text Previewer
+## NOTE
+* I am busy at the moment, slowing down development.
+* Because of license issues, uchardet has been deleted from this repository.
 ## What is this?
 
 This software is open source and can open large text files in an instant. There is no file editing function. Because this software is a prototype of +Note text editor to be developed next. However, it is useful as a translator that works without a web browser.
